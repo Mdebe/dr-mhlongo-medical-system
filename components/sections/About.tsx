@@ -9,13 +9,13 @@ import { Button } from "@/components/ui/button";
 
 const aboutImages = [
   {
-    src: "/images/hero-doctor.jpg",
+    src: "/images/dr1.png",
     alt: "Dr Nkosinathi D. Mhlongo portrait",
     title: "Specialist Orthopaedic Surgeon",
     subtitle: "15+ Years of Clinical Excellence",
   },
   {
-    src: "/images/about-doctor.jpg",
+    src: "/images/dr2.png",
     alt: "Dr Mhlongo consultation",
     title: "Patient-Centred Care",
     subtitle: "Adult & Paediatric Orthopaedics",

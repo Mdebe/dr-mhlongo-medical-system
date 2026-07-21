@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 const slides = [
   "/images/bone.jpg",
   "/images/hero.jpg",
-  "/images/hero2.jpg",
+  "/images/hero3.jpg",
   "/images/hero-doctor.jpg",
 ];
 
