@@ -1,5 +1,5 @@
-import { Bone, Scan, Microscope, Activity, Wrench, Stethoscope, CalendarCheck, Users, Building2, HeartHandshake, Award } from "lucide-react";
-
+import {   Scan, Microscope,   Wrench,   CalendarCheck, Users, Building2, HeartHandshake, Award } from "lucide-react";
+import { Bone, HeartPulse, Activity, ShieldAlert, Stethoscope, FileText, Baby } from "lucide-react";
 export const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
@@ -21,14 +21,52 @@ export const homeSectionLinks = {
   book: "/#book",
 };
 
+ 
+
 export const services = [
-  { icon: Bone, title: "Trauma Surgery", description: "Adult and paediatric trauma care for fractures and orthopaedic injuries.", href: "/services/trauma" },
-  { icon: Scan, title: "Joint Replacement", description: "Hip, knee and shoulder replacements to restore mobility and quality of life.", href: "/services/joint-replacement" },
-  { icon: Microscope, title: "Arthroscopy", description: "Minimally invasive keyhole surgery for joints, sports injuries and more.", href: "/services/arthroscopy" },
-  { icon: Activity, title: "Sports Medicine", description: "Diagnosis, treatment and rehabilitation for sports and activity-related injuries.", href: "/services/sports-medicine" },
-  { icon: Wrench, title: "Reconstruction Surgery", description: "Advanced reconstructive surgery for complex bone and joint conditions.", href: "/services/reconstruction" },
-  { icon: Stethoscope, title: "General Orthopaedics", description: "Comprehensive care for bones, joints, muscles, tendons and spine.", href: "/services/general" },
-];
+  {
+    title: "Joint Replacements",
+    description: "Hip and knee arthroplasty with modern implants for lasting pain relief and mobility.",
+    icon: Bone,
+    href: "/services/joint-replacement",
+  },
+  {
+    title: "Shoulder Conditions",
+    description: "Shoulder impingement and rotator cuff repair using minimally invasive techniques.",
+    icon: Activity,
+    href: "/services/shoulder",
+  },
+  {
+    title: "Pain Management",
+    description: "Backache, multiple joint pains and fibromyalgia – diagnosis and tailored pain control.",
+    icon: HeartPulse,
+    href: "/services/pain-management",
+  },
+  {
+    title: "Trauma",
+    description: "Fractures, dislocations, tendon injuries and soft tissue injuries – 24hr trauma cover.",
+    icon: ShieldAlert,
+    href: "/services/trauma",
+  },
+  {
+    title: "Limb Deformity Correction",
+    description: "Children and adult deformity correction, limb reconstruction and alignment surgery.",
+    icon: Baby,
+    href: "/services/deformity-correction",
+  },
+  {
+    title: "Tumours and Sepsis",
+    description: "Benign and malignant bone & soft tissue tumours, infection and sepsis management.",
+    icon: Stethoscope,
+    href: "/services/tumours-sepsis",
+  },
+  {
+    title: "Medico-Legal Services",
+    description: "Independent assessments, injury quantification and comprehensive medico-legal reports.",
+    icon: FileText,
+    href: "/services/medico-legal",
+  },
+] as const;
 
 export const stats = [
   { icon: CalendarCheck, value: "2017", label: "Established in 2017" },

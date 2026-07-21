@@ -9,17 +9,32 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#F7F5F1] text-[#101826] font-sans antialiased">
+    <div className="min-h-screen bg-white text-[#101826] font-sans antialiased selection:bg-[#D9A24B]/20">
+      {/* TopBar - NOT sticky, scrolls away */}
       <TopBar />
-      <Navbar />
-      <main> 
+
+      {/* Navbar - sticky, now alone */}
+      <div className="sticky top-0 z-50">
+        <Navbar />
+      </div>
+
+      <main className="relative bg-white">
         <Hero />
-        <Services />
+
+        {/* Add white spacing wrapper */}
+        <div className="bg-white">
+          <Services />
+        </div>
+
         <StatsBar />
-        <About />
+
+        <div className="bg-[#F7F5F1]">
+          <About />
+        </div>
+
         <BottomCTA />
-        
       </main>
+
       <Footer />
     </div>
   );
