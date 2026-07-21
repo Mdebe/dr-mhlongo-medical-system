@@ -6,8 +6,9 @@ import { Button } from "@/components/ui/button";
 
 const slides = [
   "/images/bone.jpg",
-  "/images/about-doctor.png",
-  "/images/bone-3.jpg",
+  "/images/hero.jpg",
+  "/images/hero2.jpg",
+  "/images/hero-doctor.jpg",
 ];
 
 export function Hero() {
@@ -20,33 +21,41 @@ export function Hero() {
 
   return (
     <section className="relative bg-[#0B1B33] overflow-hidden isolate">
-      {/* Background Slider */}
+      {/* Background Slider - FIXED OVERLAY */}
       <div className="absolute inset-0">
         {slides.map((src, i) => (
-          <Image
+          <div
             key={src}
-            src={src}
-            alt=""
-            fill
-            priority={i === 0}
-            sizes="100vw"
-            className={`object-cover object-center transition-opacity duration-1000 ease-in-out ${
-              i === current? "opacity-[0.45]" : "opacity-0"
+            className={`absolute inset-0 transition-opacity duration- ease-in-out ${
+              i === current? "opacity-100" : "opacity-0"
             }`}
-          />
+          >
+            <Image
+              src={src}
+              alt=""
+              fill
+              priority={i === 0}
+              sizes="100vw"
+              className={`object-cover object-center ${
+                i === current? "animate-[kenburns_6s_ease-out_forwards]" : ""
+              }`}
+            />
+          </div>
         ))}
-        <div className="absolute inset-0 bg-[#0B1B33]/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B33] via-[#0B1B33]/60 to-transparent" />
+        {/* Light overlays only - was too dark before */}
+        <div className="absolute inset-0 bg-[#0B1B33]/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B33] via-[#0B1B33]/80 via-[35%] to-[#0B1B33]/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B33] via-transparent to-transparent lg:hidden" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-10 items-center py-16 lg:py-0">
         {/* Left */}
         <div className="relative z-10 py-8 lg:py-28">
-          <p className="font-body text- font-bold tracking-[0.22em] uppercase text-[#D9A24B] mb-5">
+          <p className="font-body text-sm font-bold tracking-[0.22em] uppercase text-[#D9A24B] mb-5">
             Orthopaedic Surgeon
           </p>
 
-          <h1 className="font-heading text- sm:text- lg:text- font-[800] leading-[0.88] tracking-[-0.05em] text-white mb-6">
+          <h1 className="font-heading text-5xl sm:text-6xl lg:text- font-[800] leading-[0.88] tracking-[-0.05em] text-white mb-6">
             BONES
             <br />
             <span className="text-[#D9A24B]">RESTORED</span>
@@ -54,19 +63,27 @@ export function Hero() {
             BEST
           </h1>
 
-          <span className="block w-16 h- bg-[#D9A24B] rounded-full mb-7" />
+          <span className="block w-16 h-1.5 bg-[#D9A24B] rounded-full mb-7" />
 
-          <p className="font-body text- leading-[1.65] text-white/85 max-w- mb-9">
-            Specialist orthopaedic care focused on restoring mobility, reducing pain, and improving quality of life.
-            Excellence. Compassion. Results.
+          <p className="font-body text- leading-[1.65] text-white/80 max-w- mb-9">
+            Specialist orthopaedic care focused on restoring mobility, reducing
+            pain, and improving quality of life. Excellence. Compassion. Results.
           </p>
 
           <div className="flex flex-wrap gap-4 mb-12">
-            <Button href="#book" variant="primary" className="h- px-8 rounded-full text- font-semibold">
+            <Button
+              href="#book"
+              variant="primary"
+              className="h-12 px-8 rounded-full text- font-semibold"
+            >
               <CalendarCheck className="w-5 h-5" />
               Book an Appointment
             </Button>
-            <Button href="tel:+27136553057" variant="secondary" className="h- px-8 rounded-full text- font-semibold bg-white/10 border-white/20 text-white hover:bg-white hover:text-[#0B1B33]">
+            <Button
+              href="tel:+27136553057"
+              variant="secondary"
+              className="h-12 px-8 rounded-full text- font-semibold bg-white/10 border-white/20 text-white hover:bg-white hover:text-[#0B1B33] backdrop-blur-sm"
+            >
               <Phone className="w-5 h-5" />
               Call Us
             </Button>
@@ -81,8 +98,12 @@ export function Hero() {
               <div key={item.title} className="flex items-center gap-3">
                 <item.icon className="w-6 h-6 text-[#D9A24B] shrink-0" />
                 <div className="leading-tight">
-                  <p className="font-body text-white text- font-semibold">{item.title}</p>
-                  <p className="font-body text-white/60 text-[13.5px] mt-0.5">{item.sub}</p>
+                  <p className="font-body text-white text- font-semibold">
+                    {item.title}
+                  </p>
+                  <p className="font-body text-white/60 text- mt-0.5">
+                    {item.sub}
+                  </p>
                 </div>
               </div>
             ))}
@@ -94,26 +115,38 @@ export function Hero() {
                 key={i}
                 onClick={() => setCurrent(i)}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`h-1.5 rounded-full transition-all ${i === current? "w-8 bg-[#D9A24B]" : "w-1.5 bg-white/30 hover:bg-white/60"}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === current
+                   ? "w-8 bg-[#D9A24B]"
+                    : "w-1.5 bg-white/30 hover:bg-white/60"
+                }`}
               />
             ))}
           </div>
         </div>
 
-        {/* Right - Doctor - card removed */}
-        <div className="relative h- sm:h- lg:h- -mx-6 lg:mx-0">
+        {/* Right - Doctor */}
+        <div className="relative h- sm:h- lg:h- -mx-6 lg:mx-0 lg:ml-auto w-full max-w-">
           <Image
             src="/images/hero-doctor.jpg"
             alt="Dr Nkosinathi Mhlongo"
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover object-top"
+            className="object-cover object-top lg:rounded-bl-"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B33] via-[#0B1B33]/10 to-transparent lg:via-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B33]/80 via-transparent to-transparent" />
+          {/* Only fade edges, don't cover doctor */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B33] via-transparent via-[18%] to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B33] via-transparent to-transparent" />
         </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes kenburns {
+          from { transform: scale(1); }
+          to { transform: scale(1.08); }
+        }
+      `}</style>
     </section>
   );
 }

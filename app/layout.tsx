@@ -18,7 +18,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Dr Nkosinathi Mhlongo | Orthopaedic Surgeon",
-  description: "Specialist orthopaedic care focused on restoring mobility.",
+  description: "Specialist orthopaedic care focused on restoring mobility, reducing pain, and improving quality of life.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
