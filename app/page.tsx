@@ -5,6 +5,7 @@ import { Services } from "@/components/sections/Services";
 import { StatsBar } from "@/components/sections/StatsBar";
 import { About } from "@/components/sections/About";
 import { BottomCTA } from "@/components/layout/FooterCTA";
+import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -17,7 +18,9 @@ export default function Home() {
         <StatsBar />
         <About />
         <BottomCTA />
+        
       </main>
+      <Footer />
     </div>
   );
 }

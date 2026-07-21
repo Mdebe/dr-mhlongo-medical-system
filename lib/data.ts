@@ -1,22 +1,33 @@
 import { Bone, Scan, Microscope, Activity, Wrench, Stethoscope, CalendarCheck, Users, Building2, HeartHandshake, Award } from "lucide-react";
 
 export const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Conditions", href: "#conditions" },
-  { label: "Patient Information", href: "#patient-information" },
-  { label: "Hospitals", href: "#hospitals" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Conditions", href: "/conditions" },
+  { label: "Patient Information", href: "/patient-information" },
+  { label: "Hospitals", href: "/hospitals" },
+  { label: "Contact", href: "/contact" },
 ];
 
+// For sections that still live on the homepage
+export const homeSectionLinks = {
+  about: "/#about",
+  services: "/#services",
+  conditions: "/#conditions",
+  patientInfo: "/#patient-information",
+  hospitals: "/#hospitals",
+  contact: "/#contact",
+  book: "/#book",
+};
+
 export const services = [
-  { icon: Bone, title: "Trauma Surgery", description: "Adult and paediatric trauma care for fractures and orthopaedic injuries." },
-  { icon: Scan, title: "Joint Replacement", description: "Hip, knee and shoulder replacements to restore mobility and quality of life." },
-  { icon: Microscope, title: "Arthroscopy", description: "Minimally invasive keyhole surgery for joints, sports injuries and more." },
-  { icon: Activity, title: "Sports Medicine", description: "Diagnosis, treatment and rehabilitation for sports and activity-related injuries." },
-  { icon: Wrench, title: "Reconstruction Surgery", description: "Advanced reconstructive surgery for complex bone and joint conditions." },
-  { icon: Stethoscope, title: "General Orthopaedics", description: "Comprehensive care for bones, joints, muscles, tendons and spine." },
+  { icon: Bone, title: "Trauma Surgery", description: "Adult and paediatric trauma care for fractures and orthopaedic injuries.", href: "/services/trauma" },
+  { icon: Scan, title: "Joint Replacement", description: "Hip, knee and shoulder replacements to restore mobility and quality of life.", href: "/services/joint-replacement" },
+  { icon: Microscope, title: "Arthroscopy", description: "Minimally invasive keyhole surgery for joints, sports injuries and more.", href: "/services/arthroscopy" },
+  { icon: Activity, title: "Sports Medicine", description: "Diagnosis, treatment and rehabilitation for sports and activity-related injuries.", href: "/services/sports-medicine" },
+  { icon: Wrench, title: "Reconstruction Surgery", description: "Advanced reconstructive surgery for complex bone and joint conditions.", href: "/services/reconstruction" },
+  { icon: Stethoscope, title: "General Orthopaedics", description: "Comprehensive care for bones, joints, muscles, tendons and spine.", href: "/services/general" },
 ];
 
 export const stats = [
@@ -30,12 +41,14 @@ export const stats = [
 export const hospitals = [
   {
     name: "Emalahleni Private Hospital",
+    slug: "emalahleni-private",
     image: "/images/emalahleni.jpg",
     address: ["Suite 201, 2nd Floor", "39 Cnr Mandela & Northey Street", "Witbank, 1034"],
     tel: "+27 13 655 3057 / 8",
   },
   {
     name: "Life Cosmos Hospital",
+    slug: "life-cosmos",
     image: "/images/hospital-lifecosmos.jpg",
     address: ["Suite 1, First Floor", "C/O OR Tambo & Beatty Avenue", "Witbank, 1034"],
     tel: "+27 13 653 8010",
