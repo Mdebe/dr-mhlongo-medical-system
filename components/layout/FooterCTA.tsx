@@ -16,7 +16,7 @@ export function BottomCTA() {
           </div>
         </div>
         <div className="relative h-56 lg:h-72 hidden md:block">
-          <Image src="/images/xray-cta.jpg" alt="Orthopaedic x-ray illustration" fill sizes="400px" className="object-contain object-right opacity-80" />
+          <Image src="/images/bone.jpg" alt="Orthopaedic x-ray illustration" fill sizes="400px" className="object-contain object-right opacity-80" />
         </div>
       </div>
     </section>

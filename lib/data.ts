@@ -30,7 +30,7 @@ export const stats = [
 export const hospitals = [
   {
     name: "Emalahleni Private Hospital",
-    image: "/images/hospital-emalahleni.jpg",
+    image: "/images/emalahleni.png",
     address: ["Suite 201, 2nd Floor", "39 Cnr Mandela & Northey Street", "Witbank, 1034"],
     tel: "+27 13 655 3057 / 8",
   },

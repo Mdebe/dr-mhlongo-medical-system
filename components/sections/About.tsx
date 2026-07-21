@@ -8,7 +8,7 @@ export function About() {
   return (
     <section id="about" className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-[1fr_1.3fr_1fr] gap-10 scroll-mt-24">
       <div className="relative rounded-xl overflow-hidden min-h- bg-gray-200">
-        <Image src="/images/about-doctor.jpg" alt="Dr Nkosinathi D. Mhlongo" fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
+        <Image src="/images/about-doctor.png" alt="Dr Nkosinathi D. Mhlongo" fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
       </div>
       <div>
         <SectionLabel>About The Surgeon</SectionLabel>
