@@ -1,31 +1,28 @@
 import type { Metadata } from "next";
-import { Sora, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-
-const sora = Sora({
-  subsets: ["latin"],
-  variable: "--font-heading",
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { TopBar } from "@/components/layout/TopBar";
 
 export const metadata: Metadata = {
-  title: "Dr Nkosinathi Mhlongo | Orthopaedic Surgeon",
-  description: "Specialist orthopaedic care focused on restoring mobility, reducing pain, and improving quality of life.",
+  title: {
+    default: "Dr Nkosinathi Mhlongo | Orthopaedic Surgeon - Witbank",
+    template: "%s | Dr N Mhlongo",
+  },
+  description: "Expert orthopaedic surgeon in Witbank. Joint replacement, trauma, paediatric orthopaedics. Emalahleni Private & Life Cosmos Hospital.",
+  metadataBase: new URL("https://drmhlongo.co.za"),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sora.variable} ${jakarta.variable} scroll-smooth`}>
-      <body className="font-[family-name:var(--font-body)] antialiased tracking-[-0.01em] bg-[#F7F5F1] text-[#101826] text- leading-[1.7]">
-        {children}
+    <html lang="en" className="scroll-smooth">
+      <body className="min-h-screen flex flex-col bg-[#F7F5F1] antialiased overflow-x-hidden">
+        <TopBar />
+        <Navbar />
+        <main className="flex-1 w-full min-w-0">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
