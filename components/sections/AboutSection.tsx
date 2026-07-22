@@ -13,13 +13,14 @@ export default function AboutUs() {
             className="w-full h- sm:h- lg:h- object-cover object-top hover:scale-105 transition duration-700"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B33]/60 sm:from-[#0B1B33]/40 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B33]/50 sm:from-[#0B1B33]/40 via-transparent to-transparent" />
 
-          <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl px-4 py-3.5 sm:px-6 sm:py-5 shadow-xl">
-            <p className="text- sm:text-xl font-bold text-[#0B1B33] leading-none">
+          {/* HIDDEN ON MOBILE - VISIBLE ON DESKTOP ONLY */}
+          <div className="hidden sm:block absolute bottom-6 left-6 bg-white/95 backdrop-blur-md rounded-2xl px-6 py-5 shadow-xl">
+            <p className="text-xl font-bold text-[#0B1B33] leading-none">
               Dr Nkosinathi Mhlongo
             </p>
-            <p className="text- sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.2em] font-semibold text-[#D9A24B] mt-1 sm:mt-1">
+            <p className="text-sm uppercase tracking-[0.2em] font-semibold text-[#D9A24B] mt-1">
               Specialist Orthopaedic Surgeon
             </p>
           </div>
@@ -92,7 +93,7 @@ export default function AboutUs() {
             </div>
 
             <div className="bg-white rounded-xl sm:rounded-2xl shadow-md sm:shadow-lg p-4 sm:p-6 text-center border border-gray-100">
-              <h3 className="text- sm:text-3xl font-bold text-[#D9A24B] leading-none sm:leading-none">
+              <h3 className="text- sm:text-3xl font-bold text-[#D9A24B] leading-none">
                 Adult & Child
               </h3>
               <p className="text- sm:text-sm text-gray-500 mt-1.5 sm:mt-2 leading-tight">
